@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Transaction>
+
+@{
+    ViewData["Title"] = "Transactions";
+}
+
+<div class="container">
+    <h2 class="text-center mb-4">Transaction List</h2>
+
+    <a href="@Url.Action("Create")" class="btn btn-success mb-3">Add New Transaction</a>
+
+    <table id="dataTable" class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Date</th>
+                <th>Total Price</th>
+                @* <th>Actions</th> *@
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Product.Name</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Date.ToShortDateString()</td>
+                    <td>@item.TotalPrice</td>
+                    @* <td> *@
+                    @*     <button class="btn btn-danger btn-sm" onclick="confirmDelete(@item.Id)">Delete</button> *@
+                    @* </td> *@
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function confirmDelete(transactionId) {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "This action cannot be undone!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Transaction/Delete/" + transactionId;
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $('#dataTable').DataTable();
+    });
+</script>

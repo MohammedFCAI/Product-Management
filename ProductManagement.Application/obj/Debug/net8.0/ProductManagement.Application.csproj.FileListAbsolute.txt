@@ -1,0 +1,17 @@
+D:\Mohammed\CS Projects\Tasks\ProductManagement\ProductManagement.Application\bin\Debug\net8.0\ProductManagement.Application.deps.json
+D:\Mohammed\CS Projects\Tasks\ProductManagement\ProductManagement.Application\bin\Debug\net8.0\ProductManagement.Application.dll
+D:\Mohammed\CS Projects\Tasks\ProductManagement\ProductManagement.Application\bin\Debug\net8.0\ProductManagement.Application.pdb
+D:\Mohammed\CS Projects\Tasks\ProductManagement\ProductManagement.Application\bin\Debug\net8.0\ProductManagement.Domain.dll
+D:\Mohammed\CS Projects\Tasks\ProductManagement\ProductManagement.Application\bin\Debug\net8.0\ProductManagement.Infrastructure.dll
+D:\Mohammed\CS Projects\Tasks\ProductManagement\ProductManagement.Application\bin\Debug\net8.0\ProductManagement.Domain.pdb
+D:\Mohammed\CS Projects\Tasks\ProductManagement\ProductManagement.Application\bin\Debug\net8.0\ProductManagement.Infrastructure.pdb
+D:\Mohammed\CS Projects\Tasks\ProductManagement\ProductManagement.Application\obj\Debug\net8.0\ProductManagement.Application.csproj.AssemblyReference.cache
+D:\Mohammed\CS Projects\Tasks\ProductManagement\ProductManagement.Application\obj\Debug\net8.0\ProductManagement.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Mohammed\CS Projects\Tasks\ProductManagement\ProductManagement.Application\obj\Debug\net8.0\ProductManagement.Application.AssemblyInfoInputs.cache
+D:\Mohammed\CS Projects\Tasks\ProductManagement\ProductManagement.Application\obj\Debug\net8.0\ProductManagement.Application.AssemblyInfo.cs
+D:\Mohammed\CS Projects\Tasks\ProductManagement\ProductManagement.Application\obj\Debug\net8.0\ProductManagement.Application.csproj.CoreCompileInputs.cache
+D:\Mohammed\CS Projects\Tasks\ProductManagement\ProductManagement.Application\obj\Debug\net8.0\ProductM.070BD2B7.Up2Date
+D:\Mohammed\CS Projects\Tasks\ProductManagement\ProductManagement.Application\obj\Debug\net8.0\ProductManagement.Application.dll
+D:\Mohammed\CS Projects\Tasks\ProductManagement\ProductManagement.Application\obj\Debug\net8.0\refint\ProductManagement.Application.dll
+D:\Mohammed\CS Projects\Tasks\ProductManagement\ProductManagement.Application\obj\Debug\net8.0\ProductManagement.Application.pdb
+D:\Mohammed\CS Projects\Tasks\ProductManagement\ProductManagement.Application\obj\Debug\net8.0\ref\ProductManagement.Application.dll
