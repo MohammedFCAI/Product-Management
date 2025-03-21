@@ -1,0 +1,60 @@
+﻿.hero-section {
+    height: 91.1vh;
+    background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 72px;
+    color: white;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 30px;
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+    border: none;
+    outline: none;
+}
+
+.btn:hover {
+    background-color: #002f6cab;
+}

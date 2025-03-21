@@ -16,8 +16,44 @@ namespace ProductManagement.Presentation.Controllers
             _toastNotification = toastNotification;
         }
 
+        [HttpGet]
         public async Task<IActionResult> Index() => View(await _productService.GetAllProductsAsync());
 
+
+
+        [HttpGet]
+        public async Task<IActionResult> GetProducts2()
+        {
+            try
+            {
+                var products = await _productService.GetAllProductsAsync();
+                if (products == null || !products.Any())
+                    return Json(new { data = new List<Product>() });
+                return Json(products);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = "An error occurred while fetching products" });
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetProducts3()
+        {
+            try
+            {
+                var products = await _productService.GetAllProductsAsync();
+                if (products == null) products = new List<Product>();
+
+                return Json(new { data = products });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = ex.Message }); // Return actual error for debugging
+            }
+        }
+
+        [HttpGet]
         public IActionResult Create() => View();
 
         [HttpPost]
@@ -33,7 +69,7 @@ namespace ProductManagement.Presentation.Controllers
             return View(product);
         }
 
-
+        [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
             var product = await _productService.GetProductByIdAsync(id);
@@ -56,12 +92,26 @@ namespace ProductManagement.Presentation.Controllers
             return View(product);
         }
 
+        [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
-            await _productService.DeleteProductAsync(id);
-            _toastNotification.AddSuccessToastMessage("Product Deleted Successfully!");
+            try
+            {
+                var product = await _productService.GetProductByIdAsync(id);
 
-            return RedirectToAction("Index");
+                if (product == null)
+                {
+                    return Json(new { success = false, message = "Product not found" });
+                }
+
+                await _productService.DeleteProductAsync(id);
+                _toastNotification.AddSuccessToastMessage("Product Deleted Successfully!");
+                return Json(new { success = true, message = "Product deleted successfully" });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = "An error occurred while deleting the product" });
+            }
         }
     }
 }

@@ -32,49 +32,6 @@ namespace ProductManagement.Presentation.Controllers
             return View(new TransactionViewModel());
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create1(TransactionViewModel transaction)
-        {
-            if (ModelState.IsValid)
-            {
-                var product = await _productService.GetProductByIdAsync(transaction.ProductId);
-                if (product == null)
-                {
-                    ModelState.AddModelError("", "Selected product does not exist.");
-                    ViewBag.Products = await _productService.GetAllProductsAsync();
-                    return View(transaction);
-                }
-
-                transaction.Unit = product.Unit;
-                transaction.Price = product.Price;
-                transaction.TotalPrice = transaction.Price * transaction.Quantity;
-
-                var newTransaction = new Transaction
-                {
-                    ProductId = transaction.ProductId,
-                    Quantity = transaction.Quantity,
-                    Date = transaction.Date,
-                    TotalPrice = transaction.TotalPrice
-                };
-
-                var result = await _transactionService.CreateTransactionAsync(newTransaction);
-                if (result == "Success")
-                    _toastNotification.AddSuccessToastMessage("Transaction Created Successfully!");
-                else
-                {
-
-                    _toastNotification.AddErrorToastMessage(result);
-                    ViewBag.Products = await _productService.GetAllProductsAsync();
-                    return View(transaction);
-                }
-
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.Products = await _productService.GetAllProductsAsync();
-            return View(transaction);
-        }
 
 
         [HttpPost]
@@ -95,12 +52,11 @@ namespace ProductManagement.Presentation.Controllers
                 return View(transaction);
             }
 
-            // Assign product details to the transaction
+
             transaction.Unit = product.Unit;
             transaction.Price = product.Price;
             transaction.TotalPrice = transaction.Price * transaction.Quantity;
 
-            // Create a new transaction entity
             var newTransaction = new Transaction
             {
                 ProductId = transaction.ProductId,
@@ -109,7 +65,7 @@ namespace ProductManagement.Presentation.Controllers
                 TotalPrice = transaction.TotalPrice
             };
 
-            // Process transaction creation
+
             var result = await _transactionService.CreateTransactionAsync(newTransaction);
             if (result != "Success")
             {

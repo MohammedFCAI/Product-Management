@@ -2,7 +2,6 @@
 
 namespace ProductManagement.Application.ViewModels
 {
-
     public class TransactionViewModel
     {
         public TransactionViewModel()
@@ -10,7 +9,7 @@ namespace ProductManagement.Application.ViewModels
             Date = DateTime.Today;
         }
 
-        [Required]
+        [Required(ErrorMessage ="Product field is required.")]
         public int ProductId { get; set; }
 
         [Required]

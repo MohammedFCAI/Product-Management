@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Products";
+}
+
+<div class="container">
+    <a asp-action="Create" class="btn btn-success mb-3 ps-3 pe-3 pt-2 pb-2 fs-5">Add New Product</a>
+
+    <h2 class="text-center mb-4">Product List</h2>
+
+    <table id="dataTable" class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Generated Code</th>
+                <th>Name</th>
+                <th>Unit</th>
+                <th>Price</th>
+                <th>Initial Quantity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody> 
+    </table>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTable').DataTable({
+                "processing": true,
+                "serverSide": false,
+                "ajax": {
+                    "url": "/Product/GetProducts", // Make sure this matches your controller action
+                    "type": "GET",
+                    "datatype": "json",
+                    "error": function (xhr, error, thrown) {
+                        console.log("AJAX Error:", xhr.status, xhr.responseText);
+                        alert("Failed to load data. Check console for details.");
+                    }
+                },
+                "columns": [
+                    { "data": "generatedCode" },
+                    { "data": "name" },
+                    { "data": "unit" },
+                    { "data": "price" },
+                    { "data": "initialQuantity" },
+                    {
+                        "data": "id",
+                        "render": function (data, type, row) {
+                            return `<a href="/Product/Edit/${data}" class="btn btn-warning btn-sm w-50">Edit</a>
+                                    <button class="btn btn-danger btn-sm w-50" onclick="confirmDelete(${data})">Delete</button>`;
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+
+
+}

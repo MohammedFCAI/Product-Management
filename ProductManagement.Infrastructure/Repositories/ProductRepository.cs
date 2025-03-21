@@ -9,7 +9,7 @@ namespace ProductManagement.Infrastructure.Repositories
         private readonly ApplicationDbContext _context;
         public ProductRepository(ApplicationDbContext context) => _context = context;
 
-        public async Task<IEnumerable<Product>> GetAllAsync() => await _context.Products.ToListAsync();
+        public async Task<IEnumerable<Product>> GetAllAsync() => await _context.Products.AsNoTracking().ToListAsync();
 
         public async Task AddAsync(Product product)
         {

@@ -2851,11 +2851,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Mohammed\\CS Projects\\Tasks\\ProductManagement\\ProductManagement.Application\\ProductManagement.Application.csproj",
+      "projectUniqueName": "D:\\Mohammed\\CS Projects\\Tasks\\V2\\Product-Management\\ProductManagement.Application\\ProductManagement.Application.csproj",
       "projectName": "ProductManagement.Application",
-      "projectPath": "D:\\Mohammed\\CS Projects\\Tasks\\ProductManagement\\ProductManagement.Application\\ProductManagement.Application.csproj",
+      "projectPath": "D:\\Mohammed\\CS Projects\\Tasks\\V2\\Product-Management\\ProductManagement.Application\\ProductManagement.Application.csproj",
       "packagesPath": "C:\\Users\\moali\\.nuget\\packages\\",
-      "outputPath": "D:\\Mohammed\\CS Projects\\Tasks\\ProductManagement\\ProductManagement.Application\\obj\\",
+      "outputPath": "D:\\Mohammed\\CS Projects\\Tasks\\V2\\Product-Management\\ProductManagement.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2877,11 +2877,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Mohammed\\CS Projects\\Tasks\\ProductManagement\\ProductManagement.Domain\\ProductManagement.Domain.csproj": {
-              "projectPath": "D:\\Mohammed\\CS Projects\\Tasks\\ProductManagement\\ProductManagement.Domain\\ProductManagement.Domain.csproj"
+            "D:\\Mohammed\\CS Projects\\Tasks\\V2\\Product-Management\\ProductManagement.Domain\\ProductManagement.Domain.csproj": {
+              "projectPath": "D:\\Mohammed\\CS Projects\\Tasks\\V2\\Product-Management\\ProductManagement.Domain\\ProductManagement.Domain.csproj"
             },
-            "D:\\Mohammed\\CS Projects\\Tasks\\ProductManagement\\ProductManagement.Infrastructure\\ProductManagement.Infrastructure.csproj": {
-              "projectPath": "D:\\Mohammed\\CS Projects\\Tasks\\ProductManagement\\ProductManagement.Infrastructure\\ProductManagement.Infrastructure.csproj"
+            "D:\\Mohammed\\CS Projects\\Tasks\\V2\\Product-Management\\ProductManagement.Infrastructure\\ProductManagement.Infrastructure.csproj": {
+              "projectPath": "D:\\Mohammed\\CS Projects\\Tasks\\V2\\Product-Management\\ProductManagement.Infrastructure\\ProductManagement.Infrastructure.csproj"
             }
           }
         }

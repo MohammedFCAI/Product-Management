@@ -1,7 +1,9 @@
 C:\Users\moali\.nuget\packages\ntoastnotify\8.0.0\contentFiles\any\net6.0\wwwroot\noty.js
 C:\Users\moali\.nuget\packages\ntoastnotify\8.0.0\contentFiles\any\net6.0\wwwroot\toastr.js
+wwwroot\css\home.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\images\Empty Products.svg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

@@ -13630,11 +13630,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Mohammed\\CS Projects\\Tasks\\ProductManagement\\ProductManagement.Presentation\\ProductManagement.Presentation.csproj",
+      "projectUniqueName": "D:\\Mohammed\\CS Projects\\Tasks\\V2\\Product-Management\\ProductManagement.Presentation\\ProductManagement.Presentation.csproj",
       "projectName": "ProductManagement.Presentation",
-      "projectPath": "D:\\Mohammed\\CS Projects\\Tasks\\ProductManagement\\ProductManagement.Presentation\\ProductManagement.Presentation.csproj",
+      "projectPath": "D:\\Mohammed\\CS Projects\\Tasks\\V2\\Product-Management\\ProductManagement.Presentation\\ProductManagement.Presentation.csproj",
       "packagesPath": "C:\\Users\\moali\\.nuget\\packages\\",
-      "outputPath": "D:\\Mohammed\\CS Projects\\Tasks\\ProductManagement\\ProductManagement.Presentation\\obj\\",
+      "outputPath": "D:\\Mohammed\\CS Projects\\Tasks\\V2\\Product-Management\\ProductManagement.Presentation\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -13656,8 +13656,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Mohammed\\CS Projects\\Tasks\\ProductManagement\\ProductManagement.Application\\ProductManagement.Application.csproj": {
-              "projectPath": "D:\\Mohammed\\CS Projects\\Tasks\\ProductManagement\\ProductManagement.Application\\ProductManagement.Application.csproj"
+            "D:\\Mohammed\\CS Projects\\Tasks\\V2\\Product-Management\\ProductManagement.Application\\ProductManagement.Application.csproj": {
+              "projectPath": "D:\\Mohammed\\CS Projects\\Tasks\\V2\\Product-Management\\ProductManagement.Application\\ProductManagement.Application.csproj"
             }
           }
         }

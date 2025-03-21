@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g6wRoinyjkQ=",
+  "dgSpecHash": "5vupvzLd2Og=",
   "success": true,
-  "projectFilePath": "D:\\Mohammed\\CS Projects\\Tasks\\ProductManagement\\ProductManagement.Application\\ProductManagement.Application.csproj",
+  "projectFilePath": "D:\\Mohammed\\CS Projects\\Tasks\\V2\\Product-Management\\ProductManagement.Application\\ProductManagement.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\moali\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\moali\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

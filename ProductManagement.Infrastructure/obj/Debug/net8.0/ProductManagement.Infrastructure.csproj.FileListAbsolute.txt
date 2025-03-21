@@ -15,3 +15,39 @@ D:\Mohammed\CS Projects\Tasks\ProductManagement\ProductManagement.Infrastructure
 D:\Mohammed\CS Projects\Tasks\ProductManagement\ProductManagement.Infrastructure\obj\Debug\net8.0\ref\ProductManagement.Infrastructure.dll
 D:\Mohammed\CS Projects\Tasks\ProductManagement\ProductManagement.Infrastructure\bin\Debug\net8.0\ProductManagement.Infrastructure.runtimeconfig.json
 D:\Mohammed\CS Projects\Tasks\ProductManagement\ProductManagement.Infrastructure\obj\Debug\net8.0\ProductManagement.Infrastructure.genruntimeconfig.cache
+D:\Task\Product-Management\ProductManagement.Infrastructure\bin\Debug\net8.0\ProductManagement.Infrastructure.deps.json
+D:\Task\Product-Management\ProductManagement.Infrastructure\bin\Debug\net8.0\ProductManagement.Infrastructure.runtimeconfig.json
+D:\Task\Product-Management\ProductManagement.Infrastructure\bin\Debug\net8.0\ProductManagement.Infrastructure.dll
+D:\Task\Product-Management\ProductManagement.Infrastructure\bin\Debug\net8.0\ProductManagement.Infrastructure.pdb
+D:\Task\Product-Management\ProductManagement.Infrastructure\bin\Debug\net8.0\ProductManagement.Domain.dll
+D:\Task\Product-Management\ProductManagement.Infrastructure\bin\Debug\net8.0\ProductManagement.Domain.pdb
+D:\Task\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\ProductManagement.Infrastructure.csproj.AssemblyReference.cache
+D:\Task\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\ProductManagement.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Task\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\ProductManagement.Infrastructure.AssemblyInfoInputs.cache
+D:\Task\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\ProductManagement.Infrastructure.AssemblyInfo.cs
+D:\Task\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\ProductManagement.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Task\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\ProductManagement.Infrastructure.sourcelink.json
+D:\Task\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\ProductM.6D34A66C.Up2Date
+D:\Task\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\ProductManagement.Infrastructure.dll
+D:\Task\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\refint\ProductManagement.Infrastructure.dll
+D:\Task\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\ProductManagement.Infrastructure.pdb
+D:\Task\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\ProductManagement.Infrastructure.genruntimeconfig.cache
+D:\Task\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\ref\ProductManagement.Infrastructure.dll
+D:\Mohammed\CS Projects\Tasks\V2\Product-Management\ProductManagement.Infrastructure\bin\Debug\net8.0\ProductManagement.Infrastructure.deps.json
+D:\Mohammed\CS Projects\Tasks\V2\Product-Management\ProductManagement.Infrastructure\bin\Debug\net8.0\ProductManagement.Infrastructure.runtimeconfig.json
+D:\Mohammed\CS Projects\Tasks\V2\Product-Management\ProductManagement.Infrastructure\bin\Debug\net8.0\ProductManagement.Infrastructure.dll
+D:\Mohammed\CS Projects\Tasks\V2\Product-Management\ProductManagement.Infrastructure\bin\Debug\net8.0\ProductManagement.Infrastructure.pdb
+D:\Mohammed\CS Projects\Tasks\V2\Product-Management\ProductManagement.Infrastructure\bin\Debug\net8.0\ProductManagement.Domain.dll
+D:\Mohammed\CS Projects\Tasks\V2\Product-Management\ProductManagement.Infrastructure\bin\Debug\net8.0\ProductManagement.Domain.pdb
+D:\Mohammed\CS Projects\Tasks\V2\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\ProductManagement.Infrastructure.csproj.AssemblyReference.cache
+D:\Mohammed\CS Projects\Tasks\V2\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\ProductManagement.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Mohammed\CS Projects\Tasks\V2\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\ProductManagement.Infrastructure.AssemblyInfoInputs.cache
+D:\Mohammed\CS Projects\Tasks\V2\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\ProductManagement.Infrastructure.AssemblyInfo.cs
+D:\Mohammed\CS Projects\Tasks\V2\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\ProductManagement.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Mohammed\CS Projects\Tasks\V2\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\ProductManagement.Infrastructure.sourcelink.json
+D:\Mohammed\CS Projects\Tasks\V2\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\ProductM.6D34A66C.Up2Date
+D:\Mohammed\CS Projects\Tasks\V2\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\ProductManagement.Infrastructure.dll
+D:\Mohammed\CS Projects\Tasks\V2\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\refint\ProductManagement.Infrastructure.dll
+D:\Mohammed\CS Projects\Tasks\V2\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\ProductManagement.Infrastructure.pdb
+D:\Mohammed\CS Projects\Tasks\V2\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\ProductManagement.Infrastructure.genruntimeconfig.cache
+D:\Mohammed\CS Projects\Tasks\V2\Product-Management\ProductManagement.Infrastructure\obj\Debug\net8.0\ref\ProductManagement.Infrastructure.dll

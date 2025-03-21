@@ -1,62 +1,102 @@
 ﻿@model IEnumerable<Product>
-
 @{
     ViewData["Title"] = "Products";
 }
 
 <div class="container">
-    <h2 class="text-center mb-4">Product List</h2>
 
-    <a href="@Url.Action("Create")" class="btn btn-success mb-3">Add New Product</a>
 
-    <table id="dataTable" class="table table-striped">
-        <thead class="table-dark">
-            <tr>
-                <th>Generated Code</th>
-                <th>Name</th>
-                <th>Unit</th>
-                <th>Price</th>
-                <th>Initial Quantity</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.GeneratedCode</td>
-                    <td>@item.Name</td>
-                    <td>@item.Unit</td>
-                    <td>@item.Price</td>
-                    <td>@item.InitialQuantity</td>
-                    <td>
-                        <a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-warning btn-sm">Edit</a>
-                        <button class="btn btn-danger btn-sm" onclick="confirmDelete(@item.Id)">Delete</button>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-</div>
-
-<script>
-    function confirmDelete(productId) {
-        Swal.fire({
-            title: "Are you sure?",
-            text: "This action cannot be undone!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#d33",
-            cancelButtonColor: "#3085d6",
-            confirmButtonText: "Yes, delete it!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location.href = "/Product/Delete/" + productId;
-            }
-        });
+    @if (Model.Count() > 0)
+    {
+        <a asp-action="Create" class="btn btn-success mb-3 ps-3 pe-3 pt-2 pb-2 fs-5">Add New Product</a>
     }
 
-    $(document).ready(function () {
-        $('#dataTable').DataTable();
-    });
-</script>
+    @if(!Model.Any())
+    {
+        <div class=" text-center" role="alert">
+            <img class="img-fluid w-25 h-25" src="~/images/empty products.svg" />
+            <h4>No products found.</h4>
+            <p class="fs-5">Create your first product!</p>
+            <a asp-action="Create" class="btn btn-success mb-3 ps-5 pe-5 pt-3 pb-3 fs-5">Add New Product</a>
+
+        </div>
+    }
+
+    else
+    {
+    <h2 class="text-center mb-4">Product List</h2>  
+        <table id="dataTable" class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Generated Code</th>
+                    <th>Name</th>
+                    <th>Unit</th>
+                    <th>Price</th>
+                    <th>Initial Quantity</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr data-id="@item.Id">
+                        <td>@item.GeneratedCode</td>
+                        <td>@item.Name</td>
+                        <td>@item.Unit</td>
+                        <td>@item.Price</td>
+                        <td>@item.InitialQuantity</td>
+                        <td class="d-flex gap-2 justify-content-between">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm w-50">Edit</a>
+
+                            <button class="btn btn-danger btn-sm w-50" onclick="confirmDelete(@item.Id)">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            if (@Model.Any().ToString().ToLower()) {
+                $('#dataTable').DataTable();
+            }
+        });
+
+        function confirmDelete(productId) {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "This action cannot be undone!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: '@Url.Action("Delete", "Product")',
+                        type: 'POST',
+                        data: { id: productId },
+                        success: function (response) {
+                            if (response.success) {
+                                Swal.fire("Deleted!", response.message, "success");
+                                $(`tr[data-id="${productId}"]`).remove();
+                                // location.reload();
+
+                            } else {
+                                Swal.fire("Error!", response.message, "error");
+                            }
+                        },
+                        error: function (xhr) {
+                            console.log('Delete Error:', xhr.responseText);
+                            Swal.fire("Error!", "Failed to delete product.", "error");
+                        }
+                    });
+                }
+            });
+        }
+    </script>
+}
