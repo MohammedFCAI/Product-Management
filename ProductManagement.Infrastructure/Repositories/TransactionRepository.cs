@@ -20,8 +20,7 @@ namespace ProductManagement.Infrastructure.Repositories
 
         public async Task AddAsync(Transaction transaction)
         {
-            _context.Transactions.Add(transaction);
-            await _context.SaveChangesAsync();
+            await _context.Transactions.AddAsync(transaction);
         }
     }
 }

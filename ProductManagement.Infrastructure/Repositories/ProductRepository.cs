@@ -13,8 +13,7 @@ namespace ProductManagement.Infrastructure.Repositories
 
         public async Task AddAsync(Product product)
         {
-            _context.Products.Add(product);
-            await _context.SaveChangesAsync();
+            await _context.Products.AddAsync(product);
         }
 
         public async Task<Product> GetByIdAsync(int id)
@@ -31,9 +30,7 @@ namespace ProductManagement.Infrastructure.Repositories
         {
             var product = await _context.Products.FindAsync(id);
             if (product != null)
-            {
                 _context.Products.Remove(product);
-            }
         }
     }
 }

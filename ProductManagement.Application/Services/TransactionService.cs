@@ -15,27 +15,41 @@ namespace ProductManagement.Application.Services
         }
 
 
+
         public async Task<string> CreateTransactionAsync(Transaction transaction)
         {
-            var product = await _unitOfWork.Products.GetByIdAsync(transaction.ProductId);
-            if (product == null)
+            using var transactionScope = await _unitOfWork.BeginTransactionAsync();
+
+            try
             {
-                return "Product not found.";
-            }
+                var product = await _unitOfWork.Products.GetByIdAsync(transaction.ProductId);
+                if (product == null)
+                {
+                    return "Product not found.";
+                }
 
-            if (product.InitialQuantity < transaction.Quantity)
+                if (product.InitialQuantity < transaction.Quantity)
+                {
+                    return $"Only {product.InitialQuantity} quantity available for {product.Name}.";
+                }
+
+                product.InitialQuantity -= transaction.Quantity;
+                transaction.TotalPrice = product.Price * transaction.Quantity;
+
+                await _unitOfWork.Transactions.AddAsync(transaction);
+                _unitOfWork.Products.Update(product);
+
+                await _unitOfWork.CompleteAsync();
+                await transactionScope.CommitAsync();
+
+                return "Success";
+            }
+            catch (Exception ex)
             {
-                return $"Only {product.InitialQuantity} unit(s) available for {product.Name}.";
+                await transactionScope.RollbackAsync();
+                return $"Transaction failed: {ex.Message}";
             }
-
-            product.InitialQuantity -= transaction.Quantity;
-            transaction.TotalPrice = product.Price * transaction.Quantity;
-
-            await _unitOfWork.Transactions.AddAsync(transaction);
-            _unitOfWork.Products.Update(product);
-            await _unitOfWork.CompleteAsync();
-
-            return "Success";
         }
+
     }
 }

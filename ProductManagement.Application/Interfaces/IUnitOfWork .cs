@@ -1,4 +1,5 @@
-﻿using ProductManagement.Infrastructure.Repositories;
+﻿using Microsoft.EntityFrameworkCore.Storage;
+using ProductManagement.Infrastructure.Repositories;
 
 namespace ProductManagement.Application.Interfaces
 {
@@ -7,5 +8,9 @@ namespace ProductManagement.Application.Interfaces
         IProductRepository Products { get; }
         ITransactionRepository Transactions { get; }
         Task<int> CompleteAsync();
+
+        Task<IDbContextTransaction> BeginTransactionAsync();
+        Task CommitAsync();
+        Task RollbackAsync();
     }
 }

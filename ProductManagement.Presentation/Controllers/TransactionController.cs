@@ -18,17 +18,27 @@ namespace ProductManagement.Presentation.Controllers
             _toastNotification = toastNotification;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? filterDate)
         {
             var transactions = await _transactionService.GetAllTransactionsAsync();
+
+            if (!string.IsNullOrEmpty(filterDate) && DateTime.TryParse(filterDate, out DateTime parsedDate))
+            {
+                transactions = transactions.Where(t => t.Date.Date == parsedDate.Date).ToList();
+            }
+
+            ViewBag.FilterDate = filterDate;
+
             return View(transactions);
         }
+
 
 
         public async Task<IActionResult> Create()
         {
             var products = await _productService.GetAllProductsAsync();
             ViewBag.Products = products;
+
             return View(new TransactionViewModel());
         }
 

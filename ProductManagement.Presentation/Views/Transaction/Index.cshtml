@@ -6,74 +6,110 @@
 
 <div class="container">
 
-    @if(Model.Count() > 0)
-    {
-        <a asp-action="Create" class="btn btn-success mb-3 ps-3 pe-3 pt-2 pb-2 fs-5">Add New Transaction</a>
-    }
+    <div id="transactionsContainer">
+        @if (!Model.Any())
+        {
+            <div class="d-flex justify-content-end align-items-center mb-3">
+                <label for="filterDate" class="form-label me-2 fw-bold">Filter by Date:</label>
+                <input type="date" id="filterDate" name="filterDate" class="form-control d-inline w-auto me-2" value="@ViewBag.FilterDate">
+            </div>
 
-    @if (!Model.Any())
-    {
-        <div class="text-center" role="alert">
-            <img class="img-fluid w-25 h-25" src="~/images/empty products.svg" />
-
-            <h4>No transaction found.</h4>
-            <p class="fs-5">Create your first transaction!</p>
-            <a asp-action="Create" class="btn btn-success mb-3 ps-5 pe-5 pt-3 pb-3 fs-5">Add New Transaction</a>
-        </div>
-    }
-
-    else
-    {
-    <h2 class="text-center mb-4">Transaction List</h2>
-        <table id="dataTable" class="table table-striped">
-            <thead class="table-dark">
-                <tr>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Date</th>
-                    <th>Total Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
+            <div class="text-center" role="alert">
+                <img class="img-fluid w-25 h-25" src="~/images/empty products.svg" />
+                <h4>No transaction found.</h4>
+                <p class="fs-5">Create your first transaction!</p>
+                <a asp-action="Create" class="btn btn-success mb-3 ps-5 pe-5 pt-3 pb-3 fs-5">Add New Transaction</a>
+            </div>
+        }
+        else
+        {
+            <h2 class="text-center mb-4">Transaction List</h2>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                @if (Model.Count() > 0)
                 {
-                    <tr>
-                        <td>@item.Product.Name</td>
-                        <td>@item.Quantity</td>
-                        <td>@item.Date.ToString("dd/MM/yyyy")</td>
-                        <td>@item.TotalPrice</td>
-                    </tr>
+                    <a asp-action="Create" class="btn btn-success ps-3 pe-3 pt-2 pb-2 fs-5">Add New Transaction</a>
                 }
-            </tbody>
-        </table>
-    }
+                <div>
+                    <label for="filterDate" class="form-label me-2 fw-bold">Filter by Date:</label>
+                    <input type="date" id="filterDate" name="filterDate" class="form-control d-inline w-auto" value="@ViewBag.FilterDate">
+                </div>
+            </div>
+
+            <table id="dataTable" class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Date</th>
+                        <th>Total Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Product.Name</td>
+                            <td>@item.Quantity</td>
+                            <td>@item.Date.ToString("dd/MM/yyyy")</td>
+                            <td>@item.TotalPrice</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
 <script>
 
     $(document).ready(function () {
-        if (@Model.Any().ToString().ToLower()) {
-            $('#dataTable').DataTable();
-        }
+        initializeDataTable();
+
+        $(document).on('change', '#filterDate', function () {
+            filterTransactions();
+        });
+
+        $(document).on('click', '#clearFilter', function () {
+            $('#filterDate').val('');
+            filterTransactions();
+        });
     });
 
-    function confirmDelete(transactionId) {
-        Swal.fire({
-            title: "Are you sure?",
-            text: "This action cannot be undone!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#d33",
-            cancelButtonColor: "#3085d6",
-            confirmButtonText: "Yes, delete it!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location.href = "/Transaction/Delete/" + transactionId;
+    function initializeDataTable() {
+        if ($.fn.DataTable.isDataTable('#dataTable')) {
+            $('#dataTable').DataTable().destroy(); 
+        }
+
+        $('#dataTable').DataTable({
+            "searching": false,
+            "paging": true,
+            "ordering": true,
+            "info": true
+        });
+    }
+
+    function filterTransactions() {
+        var selectedDate = $('#filterDate').val();
+
+        $.ajax({
+            url: '/Transaction/Index',
+            type: 'GET',
+            data: { filterDate: selectedDate },
+            success: function (data) {
+                var newContent = $(data).find('#transactionsContainer').html();
+                $('#transactionsContainer').html(newContent);
+                initializeDataTable();
+
+                var newUrl = selectedDate ? '/Transaction/Index?filterDate=' + selectedDate : '/Transaction/Index';
+                history.replaceState(null, '', newUrl);
+            },
+            error: function () {
+                alert("Failed to fetch transactions. Please try again.");
             }
         });
     }
 
-    $(document).ready(function () {
-        $('#dataTable').DataTable();
-    });
 </script>

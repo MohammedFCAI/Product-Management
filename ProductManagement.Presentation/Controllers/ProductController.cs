@@ -22,38 +22,6 @@ namespace ProductManagement.Presentation.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> GetProducts2()
-        {
-            try
-            {
-                var products = await _productService.GetAllProductsAsync();
-                if (products == null || !products.Any())
-                    return Json(new { data = new List<Product>() });
-                return Json(products);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new { error = "An error occurred while fetching products" });
-            }
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> GetProducts3()
-        {
-            try
-            {
-                var products = await _productService.GetAllProductsAsync();
-                if (products == null) products = new List<Product>();
-
-                return Json(new { data = products });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new { error = ex.Message }); // Return actual error for debugging
-            }
-        }
-
-        [HttpGet]
         public IActionResult Create() => View();
 
         [HttpPost]
