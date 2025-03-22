@@ -81,5 +81,19 @@ namespace ProductManagement.Presentation.Controllers
                 return Json(new { success = false, message = "An error occurred while deleting the product" });
             }
         }
+
+        // Ajax
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
+        {
+            var product = await _productService.GetProductByIdAsync(id);
+            if (product == null)
+            {
+                return NotFound("Product not found.");
+            }
+
+            return PartialView("_ProductDetails", product);
+        }
+
     }
 }

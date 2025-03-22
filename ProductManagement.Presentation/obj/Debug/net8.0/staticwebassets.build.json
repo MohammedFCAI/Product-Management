@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zi1l967o8F3fKzWachw/cLRQ/SKvjOnfc3rXGr74N3k=",
+  "Hash": "vWMb0SXL4rYjOjy7Twv0drBKvYC/UOIj4LC8tVzQfKQ=",
   "Source": "ProductManagement.Presentation",
   "BasePath": "_content/ProductManagement.Presentation",
   "Mode": "Default",
@@ -2103,7 +2103,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 19 Mar 2025 07:38:40 GMT"
+          "Value": "Sat, 22 Mar 2025 13:39:50 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2140,7 +2140,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 19 Mar 2025 07:38:40 GMT"
+          "Value": "Sat, 22 Mar 2025 13:39:50 GMT"
         },
         {
           "Name": "Cache-Control",

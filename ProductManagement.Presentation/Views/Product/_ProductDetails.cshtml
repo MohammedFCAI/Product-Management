@@ -1,0 +1,35 @@
+﻿@model Product
+
+<div class="modal-header bg-primary text-white">
+    <h5 class="modal-title">Product Details</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+
+<div class="modal-body">
+    <div class="card shadow-sm border-0">
+        <div class="card-body">
+            <h5 class="card-title text-primary fw-bold mb-3">@Model.Name</h5>
+
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th class="bg-light">Generated Code</th>
+                        <td>@Model.GeneratedCode</td>
+                    </tr>
+                    <tr>
+                        <th class="bg-light">Unit</th>
+                        <td>@Model.Unit</td>
+                    </tr>
+                    <tr>
+                        <th class="bg-light">Price</th>
+                        <td><span class="badge bg-success">$@Model.Price</span></td>
+                    </tr>
+                    <tr>
+                        <th class="bg-light">Initial Quantity</th>
+                        <td>@Model.InitialQuantity</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

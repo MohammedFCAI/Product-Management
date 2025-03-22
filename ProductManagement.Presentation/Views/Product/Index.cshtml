@@ -45,11 +45,13 @@
                         <td>@item.Unit</td>
                         <td>@item.Price</td>
                         <td>@item.InitialQuantity</td>
-                        <td class="d-flex gap-2 justify-content-between">
-                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm w-50">Edit</a>
 
-                            <button class="btn btn-danger btn-sm w-50" onclick="confirmDelete(@item.Id)">Delete</button>
+                        <td class="d-flex gap-2">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm w-100">Edit</a>
+                            <button class="btn btn-primary btn-sm w-100 view-details" data-id="@item.Id">Details</button>
+                            <button class="btn btn-danger btn-sm w-100" onclick="confirmDelete(@item.Id)">Delete</button>
                         </td>
+
                     </tr>
                 }
             </tbody>
@@ -123,4 +125,27 @@
         }
 
     </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".view-details").click(function () {
+                var productId = $(this).data("id");
+
+                $.ajax({
+                    url: "/Product/Details/" + productId,
+                    type: "GET",
+                    success: function (data) {
+                        $("#productDetailsModal .modal-body").empty().html(data);
+                        $("#productDetailsModal").modal("show");
+                    },
+                    error: function () {
+                        alert("Failed to load product details.");
+                    }
+                });
+            });
+        });
+    </script>
+
 }
